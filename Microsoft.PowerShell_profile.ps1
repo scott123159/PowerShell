@@ -9,7 +9,7 @@ function poweroff { shutdown /s /t 0 }
 function reboot { shutdown /r /t 0 }
 function rmnvim {
   $NvimDataDirectory = "$env:LOCALAPPDATA\nvim-data\"
-  if (Test-Path $NvimDirectory) {
+  if (Test-Path $NvimDataDirectory) {
     Remove-Item -Recurse $NvimDataDirectory
   }
 }

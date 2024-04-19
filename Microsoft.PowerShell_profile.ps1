@@ -4,7 +4,7 @@ Set-Alias ll Get-ChildItem
 $NvimDirectory = "$env:LOCALAPPDATA\nvim\"
 $env:EDITOR = "nvim"
 
-function tree { tree.com /f /a}
+function tree($dir=".") { tree.com /f /a $dir}
 function poweroff { shutdown /f /s /t 00 }
 function reboot { shutdown /f /r /t 00 }
 function rmnvim {

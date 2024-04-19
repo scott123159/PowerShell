@@ -1,8 +1,3 @@
-Import-Module -Name Terminal-Icons
-
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/tonybaloney.omp.json" | Invoke-Expression
-ipconfig /flushdns > $null
-
 Set-Alias vim nvim
 Set-Alias ll Get-ChildItem
 
@@ -18,3 +13,16 @@ function rmnvim {
     Remove-Item -Recurse -Force $NvimDataDirectory
   }
 }
+function scoopInstallAll { 
+  scoop bucket add extras
+  scoop install terminal-icons
+  scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+}
+function scoopUpdateAll { 
+  scoop update && scoop update --all && scoop cache rm --all && scoop cleanup --all
+}
+
+Import-Module -Name Terminal-Icons
+
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/tonybaloney.omp.json" | Invoke-Expression
+ipconfig /flushdns > $null

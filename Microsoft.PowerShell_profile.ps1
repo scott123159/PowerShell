@@ -21,6 +21,14 @@ function scoopInstallAll {
 function scoopUpdateAll { 
   scoop update && scoop update --all && scoop cache rm --all && scoop cleanup --all
 }
+function setGitConfiguration {
+  git config --global user.name "You-Hua Liao"
+  git config --global user.email "scott123159@yahoo.com.tw"
+  git config --global core.editor "nvim"
+  git config --global core.autocrlf true
+  #The following command is for macOS/Linux
+  #git config --global core.autocrlf true
+}
 
 Import-Module -Name Terminal-Icons
 

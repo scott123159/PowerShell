@@ -26,6 +26,7 @@ function setGitConfiguration {
   git config --global user.email "scott123159@yahoo.com.tw"
   git config --global core.editor "nvim"
   git config --global core.autocrlf true
+  git config --global init.defaultBranch main
   #The following command is for macOS/Linux
   #git config --global core.autocrlf true
 }

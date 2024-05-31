@@ -1,7 +1,7 @@
 Set-Alias vim nvim
 Set-Alias ll Get-ChildItem
 
-$NvimDirectory = "$env:LOCALAPPDATA\nvim\"
+#$NvimDirectory = "$env:LOCALAPPDATA\nvim\"
 $env:EDITOR = "nvim"
 
 function tree($dir=".") { tree.com /f /a $dir}
@@ -13,8 +13,11 @@ function rmnvim {
     Remove-Item -Recurse -Force $NvimDataDirectory
   }
 }
-function scoopInstallAll { 
+function scoopInstallAll {
   scoop bucket add extras
+  scoop install pwsh
+  scoop install vscode
+  scoop install neovim
   scoop install terminal-icons
   scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
 }
